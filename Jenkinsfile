@@ -5,14 +5,13 @@ pipeline {
         IMAGE_NAME = "react_vite_app"
         CONTAINER_NAME = "react_vite_container"
         PORT = "5173"
-        GIT_REPO = "https://github.com/saadactin/vite_app.git"
+        GIT_REPO = "https://github.com/saadactin/vite_app.git"  // make sure this is your correct repo
     }
 
     stages {
         stage('Checkout') {
             steps {
-               git branch: 'main', url: 'https://github.com/saadactin/react_app.git'
-
+                git branch: 'main', url: "${GIT_REPO}"
             }
         }
 
